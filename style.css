@@ -1,0 +1,313 @@
+:root {
+  --bg:#06130a;
+  --panel:#0b2a16;
+  --panel2:#0f3a20;
+  --line:#2f7d45;
+  --line2:#4ade80;
+  --text:#f0fff4;
+  --muted:#bfe6c8;
+  --green:#8ee26b;
+  --user:#1f9d55;
+  --bot:#123b22;
+  --shadow:0 20px 60px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  overflow:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:radial-gradient(circle at top,#2f7d45 0,#123b22 38%,#06130a 82%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+}
+.app{
+  width:min(1180px,100%);
+  height:calc(100vh - 28px);
+  display:grid;
+  grid-template-columns:var(--side,330px) 8px 1fr;
+  background:rgba(5,25,13,.94);
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+aside{
+  padding:18px;
+  background:linear-gradient(180deg,#123b22,#071d10);
+  border-right:1px solid var(--line);
+  overflow:hidden;
+  min-width:240px;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.brand-fixed{flex:0 0 auto;text-align:center}
+.logo{
+  width:220px;
+  height:220px;
+  max-width:100%;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 8px;
+  border-radius:50%;
+  background:transparent;
+  padding:0;
+  filter:drop-shadow(0 14px 28px rgba(74,222,128,.25));
+}
+.intro{
+  font-size:15px;
+  line-height:1.55;
+  color:#dcfce7;
+  margin:8px 4px 18px;
+  text-align:left;
+}
+.topics-scroll{
+  flex:1 1 auto;
+  min-height:0;
+  overflow-y:auto;
+  padding-right:6px;
+  margin-right:-6px;
+}
+.topics-scroll::-webkit-scrollbar{width:8px}
+.topics-scroll::-webkit-scrollbar-thumb{background:#3fa35b;border-radius:999px}
+.topics-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.04);border-radius:999px}
+.section-title{
+  background:linear-gradient(90deg,#2f7d45,#14532d);
+  border:1px solid var(--line2);
+  border-radius:14px;
+  padding:12px 14px;
+  font-weight:800;
+  text-align:center;
+  margin:16px 0 12px;
+}
+.grade-toggle{
+  width:100%;
+  border:1px solid rgba(134,239,172,.45);
+  background:rgba(20,83,45,.55);
+  color:var(--green);
+  font-size:18px;
+  font-weight:800;
+  padding:11px 12px;
+  border-radius:14px;
+  margin:10px 0 8px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.grade-toggle:hover{background:#14532d;border-color:#86efac}
+.grade-content{display:none;margin:0 0 12px 4px}
+.grade-content.open{display:block}
+.course{font-weight:800;margin:12px 0 7px;color:#d8ffe2}
+.topic{
+  display:block;
+  width:100%;
+  text-align:left;
+  margin:6px 0;
+  padding:9px 10px;
+  border:1px solid transparent;
+  background:transparent;
+  color:#e9fff0;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:14px;
+  line-height:1.35;
+}
+.topic:hover{background:#14532d;border-color:#4ade80}
+.future{
+  margin-top:16px;
+  border-radius:18px;
+  padding:16px;
+  background:linear-gradient(135deg,rgba(111,224,95,.18),rgba(20,184,166,.13));
+  border:1px solid #3fa35b;
+}
+.future b{color:var(--green)}
+.resizer{
+  width:8px;
+  cursor:col-resize;
+  background:linear-gradient(180deg,#2f7d45,#092415);
+  border-left:1px solid rgba(134,239,172,.35);
+  border-right:1px solid rgba(134,239,172,.35);
+  position:relative;
+}
+.resizer:after{
+  content:'⋮';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:#86efac;
+  font-size:18px;
+  opacity:.85;
+}
+main{display:flex;flex-direction:column;min-width:0;height:100%;overflow:hidden}
+header{
+  padding:18px 24px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:rgba(8,45,23,.96);
+  flex:0 0 auto;
+}
+h1{font-size:23px;margin:0 0 5px;line-height:1.2}
+.sub{font-size:15px;color:var(--muted)}
+.tools{display:flex;gap:10px;align-items:center}
+.iconbtn{
+  min-width:44px;
+  height:44px;
+  border-radius:15px;
+  border:1px solid #4ade80;
+  background:#14532d;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  padding:0 12px;
+}
+.iconbtn.text{width:auto;font-size:14px;font-weight:800}
+.iconbtn:hover{background:#166534}
+.messages{
+  flex:1 1 auto;
+  min-height:0;
+  overflow:auto;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  background:linear-gradient(180deg,rgba(2,20,10,.25),rgba(3,32,16,.62));
+}
+.msgrow{display:flex;gap:12px;align-items:flex-start}
+.msgrow.user{justify-content:flex-end}
+.avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:1px solid #86efac;
+  background:#052543;
+  object-fit:cover;
+  flex:0 0 50px;
+}
+.bubble{
+  max-width:min(720px,82%);
+  padding:16px 18px;
+  border-radius:20px;
+  line-height:1.55;
+  font-size:16px;
+  white-space:pre-wrap;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+}
+.bot .bubble{
+  background:linear-gradient(180deg,#164b2a,#0d2f1a);
+  border:1px solid #3fa35b;
+  border-top-left-radius:6px;
+}
+.user .bubble{
+  background:linear-gradient(180deg,#22a35a,#15803d);
+  border:1px solid #86efac;
+  border-top-right-radius:6px;
+}
+.name{display:block;font-size:13px;font-weight:800;color:var(--green);margin-bottom:5px}
+.composer{
+  padding:16px;
+  border-top:1px solid var(--line);
+  background:#092415;
+  flex:0 0 auto;
+}
+.quick{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.chip{
+  border:1px solid var(--line);
+  background:#0f2f1c;
+  color:#e9fff0;
+  border-radius:999px;
+  padding:8px 12px;
+  cursor:pointer;
+  font-size:13px;
+}
+.chip:hover{background:#14532d;border-color:#4ade80}
+.inputbar{display:flex;gap:10px}
+textarea{
+  flex:1;
+  min-height:52px;
+  max-height:130px;
+  resize:none;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:#061b0f;
+  color:white;
+  padding:15px;
+  font:16px Arial;
+  outline:none;
+}
+textarea:focus{border-color:#86efac;box-shadow:0 0 0 3px rgba(134,239,172,.14)}
+.send{
+  width:64px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(180deg,#4ade80,#15803d);
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+}
+.send:disabled{opacity:.55;cursor:not-allowed}
+.foot{font-size:12px;color:#c8f7d2;text-align:center;margin-top:8px}
+dialog{
+  border:none;
+  border-radius:22px;
+  background:#092415;
+  color:white;
+  max-width:720px;
+  width:92%;
+  box-shadow:var(--shadow);
+  padding:0;
+}
+dialog::backdrop{background:rgba(0,0,0,.62)}
+.modal{padding:22px}
+.modal h2{margin:0 0 10px}
+.modal p{color:#d1fae5;line-height:1.55}
+.modal input{
+  width:100%;
+  padding:13px;
+  border-radius:12px;
+  border:1px solid #4ade80;
+  background:#061b0f;
+  color:white;
+  margin:7px 0 12px;
+}
+.modal button{
+  padding:11px 16px;
+  border-radius:12px;
+  border:1px solid #4ade80;
+  background:#14532d;
+  color:white;
+  cursor:pointer;
+  margin-right:8px;
+}
+@media(max-width:850px){
+  body{padding:0;align-items:stretch;justify-content:stretch;background:#06130a}
+  .app{width:100%;height:100dvh;min-height:100dvh;border-radius:0;border-left:0;border-right:0;grid-template-columns:1fr}
+  aside,.resizer{display:none}
+  main{height:100dvh}
+  header{padding:12px;align-items:flex-start;gap:8px}
+  header>div:first-child{min-width:0}
+  h1{font-size:16px;line-height:1.25}
+  .sub{font-size:12px;line-height:1.3}
+  .tools{gap:6px;flex-shrink:0}
+  .iconbtn{min-width:38px;height:38px;border-radius:12px;font-size:15px;padding:0 9px}
+  .iconbtn.text{font-size:12px;line-height:1.05;max-width:76px;white-space:normal}
+  .messages{padding:12px;gap:12px}
+  .avatar{width:34px;height:34px;flex-basis:34px}
+  .bubble{max-width:92%;padding:13px 14px;font-size:14px;line-height:1.48;border-radius:16px}
+  .composer{padding:10px 10px 8px}
+  .quick{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding-bottom:4px;margin-bottom:8px;-webkit-overflow-scrolling:touch}
+  .chip{flex:0 0 auto;font-size:12px;padding:7px 10px}
+  .inputbar{gap:8px;align-items:stretch}
+  textarea{min-height:46px;max-height:94px;font-size:15px;padding:12px;border-radius:14px}
+  .send{width:52px;border-radius:15px;font-size:21px}
+  .foot{font-size:10.5px;line-height:1.25;margin-top:6px;padding:0 4px}
+  dialog{width:94%;max-width:94%}
+  .modal{padding:18px}
+}
