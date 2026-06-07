@@ -369,7 +369,7 @@ dialog::backdrop{background:rgba(0,0,0,.62)}
   <main>
     <header>
       <div>
-        <h1> EcoBot · Biology · Geography · Environmental Awareness · Sustainability</h1>
+        <h1>🌱 EcoBot · Biology · Geography · Environmental Awareness · Sustainability</h1>
         <div class="sub">An AI-supported learning assistant for 9th and 10th grade students</div>
       </div>
       <div class="tools">
@@ -878,15 +878,19 @@ function escapeHTML(str){
 
 function welcome(){
   addMessage("bot", `Hello! 👋 I am EcoBot.
+
 I can help you explore environmental topics in English:
+
 • Recycling & Waste
 • Water & Oceans
 • Climate Change
 • Biodiversity
 • Energy
 • Ecosystems and sustainability
+
 What would you like to learn today?`);
 }
+
 function clearChat(){
   history = [];
   el("messages").innerHTML = "";
